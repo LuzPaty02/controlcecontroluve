@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour
@@ -8,14 +9,32 @@ public class QuizManager : MonoBehaviour
      public List<QuestionAndAnswer> QnA;  
      public GameObject[] options;
      public int currentQuestion;
-
-     
      public TMPro.TextMeshProUGUI QuestionTxt;
+     public GameObject Quizpanel;
+     public GameObject GoPanel;
+ 
+
+     public void next(){
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Quizpanel.SetActive(false);
+        }}
 
      private void Start() {
           generateQuestion();
+
      }
      public void correct(){
+          generateQuestion();
+          QnA.RemoveAt(currentQuestion);
+
+     }
+     public void wrong(){
           generateQuestion();
           QnA.RemoveAt(currentQuestion);
 
@@ -35,11 +54,16 @@ public class QuizManager : MonoBehaviour
          }
      }
      void generateQuestion(){
+          if (QnA.Count>0){
+
           currentQuestion= Random.Range(0, QnA.Count);
 
           QuestionTxt.text=QnA[currentQuestion].Question;
 
           SetAnswers();
+          }else{
+               Debug.Log("Out of Questions");
+          }
 
           
      }
