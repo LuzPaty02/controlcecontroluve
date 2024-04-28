@@ -643,33 +643,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   QnA:
-  - Question: name
-    Answer:
-    - op1
-    - op2
-    - op3
-    - op4
-    CorrectAnswer: 2
-  - Question: x
-    Answer:
-    - op1
-    - op2
-    - op3
-    - op4
-    CorrectAnswer: 3
-  - Question: lol
-    Answer:
-    - aver
-    - op2
-    - op3
-    - op4
-    CorrectAnswer: 1
-  - Question: eyyy
-    Answer:
-    - op1
-    - op2
-    - op3
-    - op4
+  - Question: pregunta1
+    QuestionImage: {fileID: 21300000, guid: 442ed82ebb345f04cbafca62820a25e8, type: 3}
+    AnswerImages:
+    - {fileID: 21300000, guid: 2288e3c7794c2934db34931fca08780b, type: 3}
+    - {fileID: 21300000, guid: b8907ac8eebce4e45a54a5c2853e5eb4, type: 3}
+    - {fileID: 21300000, guid: 50cf6d0a2c1bd7d4c967992524106ba9, type: 3}
+    - {fileID: 21300000, guid: d966bb981bd047943a99bb85eb805513, type: 3}
     CorrectAnswer: 2
   options:
   - {fileID: 1308152635}
@@ -678,6 +658,7 @@ MonoBehaviour:
   - {fileID: 525855146}
   currentQuestion: 1
   QuestionTxt: {fileID: 1459538039}
+  QuestionImg: {fileID: 0}
 --- !u!4 &540868168
 Transform:
   m_ObjectHideFlags: 0
