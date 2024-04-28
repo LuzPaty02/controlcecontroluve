@@ -10,7 +10,7 @@ public class QuizManager : MonoBehaviour
      public int currentQuestion;
 
      
-     public UnityEngine.UI.Text QuestionTxt;
+public TMPro.TextMeshProUGUI QuestionTxt;
 
      private void Start() {
           generateQuestion();
